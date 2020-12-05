@@ -32,7 +32,7 @@ function MyApp({Component, pageProps}: AppProps) {
 
     return (<SessionContext.Provider value={{isAuthenticated, userProfile}}>
         <Head>
-            <title>No BS Next</title>
+            <title>🎅 Noel</title>
         </Head>
         <Component {...pageProps} />
     </SessionContext.Provider>)
