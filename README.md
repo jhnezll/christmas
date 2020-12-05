@@ -23,8 +23,8 @@ Here s a link to the app which can be used in a browser.
 ## What was used for this project...
  - React/Next.js
  - Framer Motion
- - Styled Components
  - Axios
+ - Unsplash API
 
 
 
