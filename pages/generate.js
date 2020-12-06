@@ -5,6 +5,7 @@ import ImgBox from "../components/ImgBox"
 export default function Generate() {
 
     const [image, setImage] = useState([])
+    const [text, setText] = useState("And happy holidays")
 
     useEffect(() => {
         const apiRoot = "https://api.unsplash.com"
@@ -14,11 +15,32 @@ export default function Generate() {
             .then(res => setImage([...image, ...res.data]))
     }, [])
 
+    function handleChange(event) {
+        const {name, value} = event.target
+        setText({value})
+    }
+
     return(
-        <div className="h-screen flex justify-center items-center bg-pink-300">
-            {image.map(image => (
-              <ImgBox url={image.urls.full} key={image.id}/>
-            ))}
+        <div>
+            <div className="h-screen flex flex-col justify-center items-center bg-pink-300">
+
+                {image.map(image => (
+                    <ImgBox url={image.urls.full} key={image.id} name={text}/>
+                ))}
+                <form className="text-2xl py-12 px-2">
+                    <input
+                        className="rounded border-4 border-white text-center bg-pink-300 text-white placeholder-white"
+                        type="text"
+                        name="text"
+                        placeholder="Insert Name"
+                        value={text}
+                        onChange={handleChange}
+                    />
+                </form>
+            </div>
+
+
         </div>
+
     )
 }
