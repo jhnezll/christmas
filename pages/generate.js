@@ -5,7 +5,8 @@ import ImgBox from "../components/ImgBox"
 export default function Generate() {
 
     const [image, setImage] = useState([])
-    const [text, setText] = useState("And happy holidays")
+    const [text, setText] = useState("John")
+
 
     useEffect(() => {
         const apiRoot = "https://api.unsplash.com"
@@ -15,9 +16,10 @@ export default function Generate() {
             .then(res => setImage([...image, ...res.data]))
     }, [])
 
-    function handleChange(event) {
-        const {name, value} = event.target
-        setText({value})
+
+    function handleChange(e) {
+        const {value} = e.target
+        setText(value)
     }
 
     return(
@@ -31,9 +33,8 @@ export default function Generate() {
                     <input
                         className="rounded border-4 border-white text-center bg-pink-300 text-white placeholder-white"
                         type="text"
-                        name="text"
-                        placeholder="Insert Name"
-                        value={text}
+                        placeholder="Your Name"
+                        name="cardText"
                         onChange={handleChange}
                     />
                 </form>

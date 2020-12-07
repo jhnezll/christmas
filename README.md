@@ -21,10 +21,10 @@ Here s a link to the app which can be used in a browser.
     yarn dev
 
 ## What was used for this project...
- - React/Next.js
- - Framer Motion
- - Axios
- - Unsplash API
+ - ⚛ React/Next.js
+ - 📡 Axois
+ - 💨 Framer Motion
+ - 💦 Unsplash API
 
 
 
