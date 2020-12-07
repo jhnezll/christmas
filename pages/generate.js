@@ -27,16 +27,15 @@ export default function Generate() {
             <div id="printable" className="h-screen flex flex-col justify-center bg-pink-300 relative">
 
                 <div className="absolute w-full top-0 flex justify-end p-6">
-                    <button
-                        className="noel-button"
-                        onClick={() => window.print()}>
-                        Print</button>
+                    <button className="noel-button" onClick={() => window.print()}>Print</button>
                 </div>
 
-                <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-col justify-center py-2 px-12 items-center">
+
                     {image.map(image => (
                         <ImgBox url={image.urls.full} key={image.id} name={text}/>
                     ))}
+
                     <form className="text-2xl py-12 px-2">
                         <input
                             className="rounded-lg border-4 border-white text-center bg-pink-300 text-white placeholder-white"
